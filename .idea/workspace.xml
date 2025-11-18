@@ -5,23 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb14f025-6051-4d65-af7d-b80569a032eb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/Memes/Meme.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/Memes/MemeQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/category/CategoryQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/tag/TagQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/category/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/DBhandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/Meme.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/ObjectHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/ObjectHandlerAbstract.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/Query.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/SessionInitiator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/Tag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/tag/Tag.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +45,7 @@
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Merging jakob",
+    "git-widget-placeholder": "jakob",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/10136841/programming/Zoo-Project",
     "settings.editor.selected.configurable": "preferences.pluginManager"
