@@ -7,11 +7,11 @@ import java.util.Optional;
 public abstract class Query<destinationClass> {
 
     //Variables
-    public String db = "memedb";
+    private String db;
     private Integer currPic;
     private Connection connection;
-    public String sqlQuery;
-    public String column;
+    private String sqlQuery;
+    private String column;
 
     //Konstruktor
     public Query(String db) throws SQLException {
@@ -33,11 +33,11 @@ public abstract class Query<destinationClass> {
     }
 
     //Query
-    public void execQuery() throws SQLException {
+    public void execQuery(String sqlQuery, String column) throws SQLException {
         Statement statement = connection.createStatement();
         ResultSet result = statement.executeQuery(sqlQuery);
         while (result.next()) {
-            System.out.println(result.getString(column));
+            System.out.println(result.getString(column));   //get String --> Ergebnis statt Objektpointer
         }
     }
 

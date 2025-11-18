@@ -11,7 +11,7 @@ public class Main {
 
         try {
             Meme memeStatement = new Meme("memedb");
-            memeStatement.execQuery();
+            memeStatement.execQuery("SELECT * from memes", "date");
         } catch (Exception exception) {
             exception.printStackTrace();
         }

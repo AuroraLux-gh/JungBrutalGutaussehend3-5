@@ -6,9 +6,7 @@ import java.sql.SQLException;
 public class Meme extends Query<Meme> {
 
     public Meme(String db) throws SQLException {
-        super(db);
-        this.sqlQuery = "SELECT date FROM memes";
-        this.column = "date";
+        super("memedb");
     }
 
     /*
