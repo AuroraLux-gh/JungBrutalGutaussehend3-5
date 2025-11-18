@@ -1,8 +1,15 @@
 package de.jbg.memeapp;
 
+
 import de.jbg.memeapp.Memes.*;
 import java.io.*;
 import java.util.ArrayList;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 
 public class Main {
 
@@ -26,6 +33,7 @@ public class Main {
         } catch (Exception exception) {
             exception.printStackTrace();
         }
+
 
 
 
