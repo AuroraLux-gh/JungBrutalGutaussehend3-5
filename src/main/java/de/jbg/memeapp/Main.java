@@ -1,7 +1,19 @@
 package de.jbg.memeapp;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 public class Main {
+
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+        try {
+            Meme memeStatement = new Meme("memedb");
+            memeStatement.execQuery("SELECT * from memes", "date");
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
     }
 }
