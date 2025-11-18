@@ -1,0 +1,60 @@
+package de.jbg.memeapp.Memes;
+
+import de.jbg.memeapp.SessionInitiator;
+
+import java.io.InputStream;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.sql.*;
+
+public class MemeQuery extends SessionInitiator {
+
+    private Connection connection = getConnection();
+
+    //Konstruktor
+    public MemeQuery() throws SQLException {
+        super();
+    }
+
+    //getQuery
+    String getSqlQuery = "Select * FROM memes";
+    public ArrayList<Meme> execGetQuery() throws SQLException {
+        ArrayList<Meme> resultArray = new ArrayList<>();
+        Statement statement = connection.createStatement();
+        ResultSet result = statement.executeQuery(getSqlQuery);
+        while (result.next()) {
+            Meme meme = new Meme();
+            meme.setMeme_ID(result.getInt("meme_ID"));
+            meme.setPic(result.getBlob("pic"));
+            meme.setDate(result.getDate("date"));
+            meme.setHeight(result.getInt("height"));
+            meme.setLength(result.getInt("length"));
+            meme.setSize(result.getInt("size"));
+            //Fremdschlüssel bzw. sind auch NULL-Werte ok?, Attribute noch nicht definiert in Meme
+            resultArray.add(meme);
+        }
+        return resultArray;
+    }
+
+    //setQuery
+    InputStream inputStream;
+
+    public void execInsertWithBlob(String sqlQuery, InputStream blobStream, java.sql.Date date, int height, int length, int size, int category, int tag) throws SQLException {
+        try (PreparedStatement stmt = connection.prepareStatement(sqlQuery)) {
+            stmt.setBlob(1, blobStream);
+            stmt.setDate(2, date);
+            stmt.setInt(3, height);
+            stmt.setInt(4, length);
+            stmt.setInt(5, size);
+            stmt.setInt(6, category);
+            stmt.setInt(7, tag);
+
+            stmt.executeUpdate();
+            System.out.println("Gespeichert lol!!!");
+
+        }
+    }
+
+}
