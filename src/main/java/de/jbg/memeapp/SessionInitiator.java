@@ -1,21 +1,22 @@
 package de.jbg.memeapp;
 
 import io.github.cdimascio.dotenv.Dotenv;
+
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Optional;
 
-public abstract class Query<destinationClass> {
+public abstract class SessionInitiator {
 
     //Variables
-    private String db;
-    private Integer currPic;
     private Connection connection;
+    private String db = "memedb";
+    private Integer currPic;
     private String sqlQuery;
     private String column;
 
     //Konstruktor
-    public Query(String db) throws SQLException {
-        this.db = db;
+    public SessionInitiator() throws SQLException {
 
         //Session Setup
         Dotenv dotenv = Dotenv.load();
@@ -32,29 +33,9 @@ public abstract class Query<destinationClass> {
         }
     }
 
-    //Query
-    public void execQuery(String sqlQuery, String column) throws SQLException {
-        Statement statement = connection.createStatement();
-        ResultSet result = statement.executeQuery(sqlQuery);
-        while (result.next()) {
-            System.out.println(result.getString(column));   //get String --> Ergebnis statt Objektpointer
-        }
-    }
-
-    //setter
-    /*
-        some setter to change the query
-        some setter to change db
-    */
-
     //getter
-    public String getDB() {
-        return this.db;
+    public Connection getConnection() {
+        return this.connection;
     }
-    //(abstract, overwrite by extend classes)
-    /*
-    public abstract Integer getCurrPic();
-    public abstract String getSqlQuery();
-     */
 
 }
