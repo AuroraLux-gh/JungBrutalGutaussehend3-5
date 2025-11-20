@@ -2,6 +2,7 @@ package de.jbg.memeapp.tag;
 
 import de.jbg.memeapp.SessionInitiator;
 
+import java.io.InputStream;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -17,13 +18,11 @@ public class TagQuery extends SessionInitiator {
         super();
     }
 
-    //Query
-    String sqlQueryTag = "Select * FROM tag";
-
-    public ArrayList<Tag> execQuery() throws SQLException {
+    //getQuery
+    public ArrayList<Tag> execQuery(String getSqlQuery) throws SQLException {
         ArrayList<Tag> resultArray = new ArrayList<>();
         Statement statement = connection.createStatement();
-        ResultSet result = statement.executeQuery(sqlQueryTag);
+        ResultSet result = statement.executeQuery(getSqlQuery);
         while (result.next()) {
             Tag tag = new Tag();
             tag.setTag_ID(result.getInt("tag_ID"));
@@ -33,6 +32,17 @@ public class TagQuery extends SessionInitiator {
             resultArray.add(tag);
         }
         return resultArray;
+    }
+
+    //setQuery
+    InputStream inputStream;
+    public void execInsert(String insertSqlQuery, String name) throws SQLException {
+        try (PreparedStatement stmt = connection.prepareStatement(insertSqlQuery)) {
+            stmt.setString(1, name);
+            stmt.executeUpdate();
+            System.out.println("Tag gespeichert");
+
+        }
     }
 
 }

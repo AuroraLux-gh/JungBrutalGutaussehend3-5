@@ -1,8 +1,8 @@
 package de.jbg.memeapp.category;
 
 import de.jbg.memeapp.SessionInitiator;
-import de.jbg.memeapp.category.Category;
 
+import java.io.InputStream;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -18,13 +18,11 @@ public class CategoryQuery extends SessionInitiator {
         super();
     }
 
-    //Query
-    String sqlQueryTag = "Select * FROM tag";
-
-    public ArrayList<Category> execQuery() throws SQLException {
+    //getQuery
+    public ArrayList<Category> execQuery(String getSqlQuery) throws SQLException {
         ArrayList<Category> resultArray = new ArrayList<>();
         Statement statement = connection.createStatement();
-        ResultSet result = statement.executeQuery(sqlQueryTag);
+        ResultSet result = statement.executeQuery(getSqlQuery);
         while (result.next()) {
             Category category = new Category();
             category.setCat_ID(result.getInt("cat_ID"));
@@ -34,6 +32,18 @@ public class CategoryQuery extends SessionInitiator {
             resultArray.add(category);
         }
         return resultArray;
+    }
+
+    //setQuery
+    //setQuery
+    InputStream inputStream;
+    public void execInsert(String insertSqlQuery, String category) throws SQLException {
+        try (PreparedStatement stmt = connection.prepareStatement(insertSqlQuery)) {
+            stmt.setString(1, category);
+            stmt.executeUpdate();
+            System.out.println("Tag gespeichert");
+
+        }
     }
 
 }

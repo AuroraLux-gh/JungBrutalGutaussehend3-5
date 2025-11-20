@@ -19,8 +19,7 @@ public class MemeQuery extends SessionInitiator {
     }
 
     //getQuery
-    String getSqlQuery = "Select * FROM memes";
-    public ArrayList<Meme> execGetQuery() throws SQLException {
+    public ArrayList<Meme> execGetQuery(String getSqlQuery) throws SQLException {
         ArrayList<Meme> resultArray = new ArrayList<>();
         Statement statement = connection.createStatement();
         ResultSet result = statement.executeQuery(getSqlQuery);
@@ -40,9 +39,8 @@ public class MemeQuery extends SessionInitiator {
 
     //setQuery
     InputStream inputStream;
-
-    public void execInsertWithBlob(String sqlQuery, InputStream blobStream, java.sql.Date date, int height, int length, int size, int category, int tag) throws SQLException {
-        try (PreparedStatement stmt = connection.prepareStatement(sqlQuery)) {
+    public void execInsertWithBlob(String insertSqlQuery, InputStream blobStream, java.sql.Date date, int height, int length, int size, int category, int tag) throws SQLException {
+        try (PreparedStatement stmt = connection.prepareStatement(insertSqlQuery)) {
             stmt.setBlob(1, blobStream);
             stmt.setDate(2, date);
             stmt.setInt(3, height);
@@ -52,7 +50,7 @@ public class MemeQuery extends SessionInitiator {
             stmt.setInt(7, tag);
 
             stmt.executeUpdate();
-            System.out.println("Gespeichert lol!!!");
+            System.out.println("Bild gespeichert");
 
         }
     }
