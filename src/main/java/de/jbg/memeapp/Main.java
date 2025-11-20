@@ -11,11 +11,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
 
 public class Main {
 
@@ -26,7 +21,7 @@ public class Main {
         HttpServer server = null;
         try {
             server = HttpServer.create(new InetSocketAddress(8000), 0);
-            server.createContext("/api/memes", new API.MyHandler());
+            server.createContext("/api/memes", new API.MyHandler()); //this could be an abstract handler
             server.setExecutor(null); // creates a default executor
             server.start();
         } catch (IOException exception) {

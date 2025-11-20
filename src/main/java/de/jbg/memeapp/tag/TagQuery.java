@@ -34,7 +34,7 @@ public class TagQuery extends SessionInitiator {
         return resultArray;
     }
 
-    //setQuery
+    //InsertQuery
     InputStream inputStream;
     public void execInsert(String insertSqlQuery, String name) throws SQLException {
         try (PreparedStatement stmt = connection.prepareStatement(insertSqlQuery)) {
