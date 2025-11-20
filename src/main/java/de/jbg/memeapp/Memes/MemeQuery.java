@@ -37,7 +37,7 @@ public class MemeQuery extends SessionInitiator {
         return resultArray;
     }
 
-    //setQuery
+    //InsertQuery
     InputStream inputStream;
     public void execInsertWithBlob(String insertSqlQuery, InputStream blobStream, java.sql.Date date, int height, int length, int size, int category, int tag) throws SQLException {
         try (PreparedStatement stmt = connection.prepareStatement(insertSqlQuery)) {

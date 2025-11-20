@@ -5,8 +5,7 @@ import lombok.Setter;
 
 import java.io.InputStream;
 
-@Setter
-@Getter
+@Setter @Getter
 public class Category {
 
     private Integer cat_ID;

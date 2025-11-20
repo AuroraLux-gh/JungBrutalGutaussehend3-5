@@ -34,8 +34,7 @@ public class CategoryQuery extends SessionInitiator {
         return resultArray;
     }
 
-    //setQuery
-    //setQuery
+    //InputQuery
     InputStream inputStream;
     public void execInsert(String insertSqlQuery, String category) throws SQLException {
         try (PreparedStatement stmt = connection.prepareStatement(insertSqlQuery)) {

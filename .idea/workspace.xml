@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb14f025-6051-4d65-af7d-b80569a032eb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/API.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/API.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/API.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/Memes/MemeQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/Memes/MemeQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/category/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/category/Category.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/category/CategoryQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/category/CategoryQuery.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/tag/TagQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/tag/TagQuery.java" afterDir="false" />
     </list>
@@ -91,5 +92,21 @@
       <updated>1763375295798</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/de/jbg/memeapp/API.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="sun.net.httpserver.ExchangeImpl" memberName="reqHdrs" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
