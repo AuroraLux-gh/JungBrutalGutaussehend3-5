@@ -17,7 +17,6 @@ public class Main {
     public static void main(String[] args) {
 
         //start API / Webserver (HTTP)
-
         HttpServer server = null;
         try {
             server = HttpServer.create(new InetSocketAddress(8000), 0);
@@ -45,7 +44,7 @@ public class Main {
         }
 
 
-                /* would need POST in the other project
+        /* would need POST in the other project
         //setData
         InputStream inputStream;
         try {
