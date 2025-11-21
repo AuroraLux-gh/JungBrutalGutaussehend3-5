@@ -28,11 +28,11 @@ Aileen, Lux, Jakob
 
 ## 🧠 ToDos
 
-### 🐾 **Datenbank**
+### **Datenbank**
 - weitere Beispieldatensätze anlegen
 - Datensätze konkretisieren (bspw. Bilder als Blob hinterlegen)
 
-### 🐾 **Applikation**
+### **Applikation**
 - JDBC einrichten (Two-Tier-Architecture)
   - Packages importieren
   - Treiber (runter)laden
