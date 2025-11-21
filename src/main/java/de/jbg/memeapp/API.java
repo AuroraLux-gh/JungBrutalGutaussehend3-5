@@ -19,9 +19,17 @@ public class API {
         @Override
         public void handle(HttpExchange exchange) throws IOException {
 
-            //getBlobOfMemeFour
+            //getID
+            String requestURI = String.valueOf(String.valueOf(exchange.getRequestURI())); //double wrap as requested by IDE (wtf??)
+            String[] parts = requestURI.split("/");
+            String memeID = parts[parts.length-1];
+
+            //getBlobOfOneMeme
             Blob response = new MariaDbBlob();   //API-Response
-            String getSqlQuery = "Select * FROM memes WHERE meme_ID=4";
+            String getSqlQuery = "Select * FROM memes";
+            if (parts.length == 4) {
+                getSqlQuery = "Select * FROM memes WHERE meme_ID=" + memeID;
+            }
             try {
                 MemeQuery memeQuery = new MemeQuery();
                 ArrayList<Meme> memes = memeQuery.execGetQuery(getSqlQuery);
