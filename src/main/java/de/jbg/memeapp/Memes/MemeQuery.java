@@ -55,4 +55,14 @@ public class MemeQuery extends SessionInitiator {
         }
     }
 
+    //Update & Delete Query
+    public void execSomeQuery(String someSqlQuery) throws SQLException {
+        try (PreparedStatement stmt = connection.prepareStatement(someSqlQuery)) {
+            stmt.executeUpdate();
+            System.out.println("Aktion ausgeführt");
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        }
+    }
+
 }
