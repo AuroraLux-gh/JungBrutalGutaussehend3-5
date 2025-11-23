@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/API.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/API.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/Memes/MemeQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/jbg/memeapp/Memes/MemeQuery.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +50,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "jakob",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/10136841/programming/Zoo-Project",
+    "last_opened_file_path": "C:/Users/10136841/programming/JBG-UI",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
