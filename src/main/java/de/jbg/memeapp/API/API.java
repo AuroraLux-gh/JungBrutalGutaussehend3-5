@@ -1,4 +1,5 @@
-package de.jbg.memeapp;
+/*
+package de.jbg.memeapp.API;
 
 import java.io.*;
 import java.sql.Blob;
@@ -15,7 +16,7 @@ import org.mariadb.jdbc.MariaDbBlob;
 
 public class API {
 
-    static class MyHandler implements HttpHandler {
+    public static class MyHandler implements HttpHandler {
 
         @Override
         public void handle(HttpExchange exchange) throws IOException {
@@ -40,7 +41,7 @@ public class API {
                     if (!(parts.length == 4)) {
                         getSqlQuery = "Select * FROM memes";
                     }
-                    */
+
                     try {
                         MemeQuery memeQuery = new MemeQuery();
                         ArrayList<Meme> memes = memeQuery.execGetQuery(getSqlQuery);
@@ -123,3 +124,4 @@ public class API {
         }
     }
 }
+*/

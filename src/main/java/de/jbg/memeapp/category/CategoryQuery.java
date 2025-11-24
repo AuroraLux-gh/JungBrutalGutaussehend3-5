@@ -9,7 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.sql.*;
 
-public class CategoryQuery extends SessionInitiator {
+public class CategoryQuery extends SessionInitiator {   //DAO
 
     private Connection connection = getConnection();
 

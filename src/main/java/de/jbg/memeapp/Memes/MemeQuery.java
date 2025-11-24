@@ -1,6 +1,6 @@
 package de.jbg.memeapp.Memes;
 
-import de.jbg.memeapp.SessionInitiator;
+import de.jbg.memeapp.SessionInitiator;     //DAO
 
 import java.io.InputStream;
 import java.sql.ResultSet;

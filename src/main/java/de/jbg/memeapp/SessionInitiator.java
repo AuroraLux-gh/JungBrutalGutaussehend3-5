@@ -3,7 +3,6 @@ package de.jbg.memeapp;
 import io.github.cdimascio.dotenv.Dotenv;
 
 import java.sql.*;
-import java.util.ArrayList;
 import java.util.Optional;
 
 public abstract class SessionInitiator {
