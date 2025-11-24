@@ -9,7 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.sql.*;
 
-public class TagQuery extends SessionInitiator {
+public class TagQuery extends SessionInitiator {    //DAO
 
     private Connection connection = getConnection();
 
@@ -19,7 +19,7 @@ public class TagQuery extends SessionInitiator {
     }
 
     //getQuery
-    public ArrayList<Tag> execQuery(String getSqlQuery) throws SQLException {
+    public ArrayList<Tag> execGetQuery(String getSqlQuery) throws SQLException {
         ArrayList<Tag> resultArray = new ArrayList<>();
         Statement statement = connection.createStatement();
         ResultSet result = statement.executeQuery(getSqlQuery);
@@ -42,6 +42,16 @@ public class TagQuery extends SessionInitiator {
             stmt.executeUpdate();
             System.out.println("Tag gespeichert");
 
+        }
+    }
+
+    //Update & Delete Query
+    public void execSomeQuery(String someSqlQuery) throws SQLException {
+        try (PreparedStatement stmt = connection.prepareStatement(someSqlQuery)) {
+            stmt.executeUpdate();
+            System.out.println("Aktion ausgeführt");
+        } catch (SQLException exception) {
+            exception.printStackTrace();
         }
     }
 
