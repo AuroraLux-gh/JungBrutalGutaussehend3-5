@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Getter
 @Setter
-public class Meme {
+public class Meme { //DTO
 
     private Integer meme_ID;
     private Blob pic;
