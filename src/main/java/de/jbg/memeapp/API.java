@@ -21,12 +21,18 @@ public class API {
         public void handle(HttpExchange exchange) throws IOException {
 
             String httpMethod = exchange.getRequestMethod();
+            InputStream inputStream;
+            OutputStream outputStream;
+            MemeQuery memeStatement;
+            String requestURI;
+            String[] parts;
+            String memeID;
 
             switch (httpMethod) {
                 case "GET":
-                    String requestURI = String.valueOf(exchange.getRequestURI());
-                    String[] parts = requestURI.split("/");
-                    String memeID = parts[parts.length-1];
+                    requestURI = String.valueOf(exchange.getRequestURI());
+                    parts = requestURI.split("/");
+                    memeID = parts[parts.length-1];
                     //getBlobOfOneMeme
                     Blob response = new MariaDbBlob();   //API-Response
                     String getSqlQuery = "Select * FROM memes WHERE meme_ID=" + memeID;
@@ -38,7 +44,6 @@ public class API {
                     try {
                         MemeQuery memeQuery = new MemeQuery();
                         ArrayList<Meme> memes = memeQuery.execGetQuery(getSqlQuery);
-
                         for (Meme meme : memes) {
                             response = meme.getPic();
                         }
@@ -51,7 +56,7 @@ public class API {
                     } catch (SQLException exception) {
                         throw new RuntimeException(exception);
                     }
-                    OutputStream outputStream = exchange.getResponseBody();
+                    outputStream = exchange.getResponseBody();
                     try {
                         outputStream.write(response.getBinaryStream().readAllBytes());
                     } catch (SQLException exception) {
@@ -61,11 +66,11 @@ public class API {
                     break;
 
                 case "POST":
-                    InputStream inputStream = exchange.getRequestBody();
+                    inputStream = exchange.getRequestBody();
                     //maybe make input dynamic based on the file (https://github.com/haraldk/TwelveMonkeys)
                     String setSqlQuery = "INSERT INTO memes (pic, date, height, length, size, category, tag) VALUES (?, ?, ?, ?, ?, ?, ?)";
                     try {
-                        MemeQuery memeStatement = new MemeQuery();
+                        memeStatement = new MemeQuery();
                         memeStatement.execInsertWithBlob(setSqlQuery,
                                 inputStream,
                                 Date.valueOf(LocalDate.now()),
@@ -78,12 +83,43 @@ public class API {
                     exchange.sendResponseHeaders(200, exchange.getResponseCode());
                     inputStream.close();
                     break;
-            }
 
+                case "PUT":
+                    inputStream = exchange.getRequestBody();
+                    String inputString = new String(inputStream.readAllBytes());
+                    requestURI = String.valueOf(exchange.getRequestURI());
+                    parts = requestURI.split("/");
+                    memeID = parts[parts.length-1];
+                    //maybe make input dynamic based on the file (https://github.com/haraldk/TwelveMonkeys)
+                    String updateSqlQuery = "UPDATE memes SET DATE = '"+inputString+"' WHERE meme_ID = "+memeID;
+                    try {
+                        memeStatement = new MemeQuery();
+                        memeStatement.execSomeQuery(updateSqlQuery);
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
+                    //send some response
+                    exchange.sendResponseHeaders(200, exchange.getResponseCode());
+                    inputStream.close();
+                    break;
+
+                case "DELETE":
+                    requestURI = String.valueOf(exchange.getRequestURI());
+                    parts = requestURI.split("/");
+                    memeID = parts[parts.length-1];
+                    //maybe make input dynamic based on the file (https://github.com/haraldk/TwelveMonkeys)
+                    String deleteSqlQuery = "DELETE FROM memes WHERE meme_ID = "+memeID;
+                    try {
+                        memeStatement = new MemeQuery();
+                        memeStatement.execSomeQuery(deleteSqlQuery);
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
+                    //send some response
+                    exchange.sendResponseHeaders(200, exchange.getResponseCode());
+                    break;
+            }
 
         }
     }
-
-
-
 }
